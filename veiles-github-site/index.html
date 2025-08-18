@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>維雷絲代購官網</title>
+<style>
+
+  body {
+    background-image: url('veiles-background-logo-contrast.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    }
+    body {
+      background-color: #fff8f2;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    header {
+            background-color: transparent;
+            backdrop-filter: brightness(1);
+      background: #fcf0e4;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #c97b63;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #444;
+      opacity: 0.9;
+    }
+    section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 40px 20px;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 8px;
+    }
+    h2 {
+      font-size: 2rem;
+      color: #c97b63;
+      margin-bottom: 15px;
+    }
+    h3 {
+      font-size: 1.3rem;
+      margin-top: 20px;
+      color: #a15642;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ff6600;
+      color: #fff;
+      border-radius: 24px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    .button:hover {
+      background-color: #e05500;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .fade.visible {
+      opacity: 1;
+      transform: none;
+    }
+  
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: none;
+}
+.button.glow {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 102, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 102, 0, 0); }
+}
+
+
+
+h1, h2, h3 {
+  color: #a33d00 !important;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+h1 span.emoji, h2 span.emoji, h3 span.emoji {
+  background: none !important;
+  color: #a33d00 !important;
+  -webkit-background-clip: unset !important;
+  text-shadow: none;
+}
+
+.fade-in-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInText 1s ease forwards;
+}
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.glow-hover:hover {
+  text-shadow: 0 0 8px rgba(255, 136, 0, 0.9);
+}
+
+
+/* 點擊波紋特效 */
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 136, 0, 0.4);
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none;
+}
+@keyframes ripple-effect {
+  to {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
+/* 背景光線滑動效果 */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,230,200,0.1) 0%, rgba(255,230,200,0) 80%);
+  animation: lightMove 10s infinite linear;
+  z-index: 0;
+}
+@keyframes lightMove {
+  0% { transform: translate(0%, 0%); }
+  50% { transform: translate(25%, 25%); }
+  100% { transform: translate(0%, 0%); }
+}
+
+
+/* 邊角點綴光暈與邊框 */
+body::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(255, 208, 170, 0.2), transparent 300px),
+    radial-gradient(circle at top right, rgba(255, 208, 170, 0.2), transparent 300px),
+    radial-gradient(circle at bottom left, rgba(255, 208, 170, 0.15), transparent 300px),
+    radial-gradient(circle at bottom right, rgba(255, 208, 170, 0.15), transparent 300px);
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  body::after {
+    background:
+      radial-gradient(circle at top left, rgba(255, 220, 190, 0.15), transparent 150px),
+      radial-gradient(circle at bottom right, rgba(255, 220, 190, 0.15), transparent 150px);
+  }
+}
+
+
+/* 邊框捲軸風格 + 細線 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  border: 1px solid rgba(170, 120, 80, 0.25);
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: 0 0 30px rgba(255, 235, 205, 0.1);
+}
+
+/* 飄浮粒子 */
+@keyframes floatParticles {
+  from { transform: translateY(100vh); opacity: 0; }
+  to { transform: translateY(-10vh); opacity: 0.5; }
+}
+.particle {
+  position: fixed;
+  bottom: -50px;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, rgba(255, 200, 150, 0.7) 0%, transparent 60%);
+  border-radius: 50%;
+  animation: floatParticles 12s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+/* 淡入淡出效果 */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* 霧面玻璃區塊 */
+.glass {
+  background: rgba(255, 248, 240, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 230, 200, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* 卷軸滑動過場 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 東方花紋背景飾線（浮水印風格） */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/38/Traditional_Chinese_pattern.svg');
+  background-repeat: repeat;
+  background-size: 300px;
+  opacity: 0.03;
+  z-index: -2;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+<header class="glass">
+<h1>維雷絲陸品行</h1><p class="fade-in-text glow-hover">接近大陸親民價，在台同享安心保</p>
+<p class="fade-in-text glow-hover">一站式代購 | 合法登記｜統編：00412175</p>
+<div style="margin-top: 1.5rem;">
+<a class="button glow" href="#about">品牌介紹</a>
+<a class="button glow" href="#intro">關於我們</a>
+<a class="button glow" href="#vip">VIP 會員</a>
+<a class="button glow" href="#warranty">保固政策</a>
+<a class="button glow" href="#contact">聯絡我們</a>
+<a class="button glow" href="#flow">代購流程圖</a><a class="button glow" href="#payment">支付方式</a></div>
+</header>
+<section class="fade fade-up glass fade-in" id="about">
+<h2>📜 維雷絲陸品行｜品牌介紹與願景</h2>
+<h3>關於我們</h3>
+<p class="fade-in-text glow-hover">維雷絲陸品行專注於跨境代購服務，致力於讓台灣消費者能以接近大陸的親民價格，買到更多優質商品。
+    我們深知，便宜不是唯一，購物的安心感同樣重要。
+    因此，我們不僅追求價格透明與合理，更建立了完善的保固制度，讓您在台灣也能擁有與本地購物相同的售後保障。</p>
+<h3>我們的理念</h3>
+<p class="fade-in-text glow-hover">好東西不該因為距離與價格而變得遙不可及。
+    我們希望成為消費者與商品之間值得信賴的橋樑，
+    用更合理的價格，帶來更多選擇；
+    用更安心的保障，讓購物不再有後顧之憂。</p>
+<h3>品牌願景</h3>
+<p class="fade-in-text glow-hover">我們的願景是打造一個值得信任的跨境購物平台，
+    讓每位台灣消費者都能「以接近大陸的物價，享受在地保固的安心」。
+    未來，我們將持續優化流程與服務品質，
+    讓跨境購物不只是代購，而是一種更親近、更放心的購物方式。</p>
+<a class="button glow" href="#">⇧ 回到主選單</a></section>
+<section class="fade fade-up glass fade-in" id="intro">
+<h2>📦 關於維雷絲陸品行</h2>
+<p class="fade-in-text glow-hover">
+        🛍️ 想買淘寶、拼多多、抖音、小紅書的好物卻嫌麻煩？<br/>
+        😓 怕價格太高、售後沒保障，還要搞 EZWAY？
+        </p>
+<p class="fade-in-text glow-hover">
+        🌟 在 <strong>維雷絲陸品行</strong>，這些問題都不用擔心。<br/>
+        我們主打 👉 <strong>接近大陸的親民價格</strong>，讓你買得更划算；<br/>
+        同時提供 🛡️ <strong>加購保固卡</strong>，在台灣也能享有安心的售後保障。<br/>
+        更重要的是 ✨ <strong>找我們代購 不需要 EZWAY</strong>，購物流程更簡單、省心。
+        </p>
+<p class="fade-in-text glow-hover">
+        📦 在這裡，購物就是這麼輕鬆：<br/>
+        🔗 把想買的連結給我們 → 💳 下單付款 → 🚚 等 7～21 天，商品就能直接送到你家！
+        </p>
+<p class="fade-in-text glow-hover">
+        從 3C 電子、潮流服飾、美妝用品到居家小物，<br/>
+        我們幫你跨過繁瑣流程，把想要的東西安全送到你手中。<br/>
+        🧡 讓台灣消費者也能 <strong>用接近大陸的物價，享受在地保固的安心</strong>。
+        </p>
+<a class="button glow" href="#">⇧ 回到主選單</a></section>
+<section class="fade glass fade-in" id="flow">
+<h2>📋 代購流程圖</h2>
+<p class="fade-in-text glow-hover">讓你一圖掌握下單到收貨的每一個步驟！</p>
+<img alt="代購流程圖" src="image.png"/>
+<a class="button glow" href="#">⇧ 回到主選單</a>
+</section><section class="fade glass fade-in" id="vip">
+<h2>VIP 會員方案</h2>
+<p class="fade-in-text glow-hover">小提醒一下～我們的會員卡不是單獨販售的哦 😊 需要在購買代購商品的時候一併加購，這樣保障才會直接綁定在您的商品上，售後服務也比較有依據，您用起來會更安心～</p>
+<img alt="VIP會員卡對照表" src="vip-comparison.png"/>
+<a class="button glow" href="#">⇧ 回到主選單</a></section>
+<section class="fade glass fade-in" id="payment">
+<h2>💳 支付方式</h2>
+<p class="fade-in-text glow-hover">我們支援多種付款方式，讓您安心完成每一筆交易。</p>
+<img alt="支付方式示意圖" src="payment-method.png"/>
+<a class="button glow" href="#">⇧ 回到主選單</a>
+</section><section class="fade fade-up glass fade-in" id="warranty">
+<h2>📜 維雷絲陸品行｜保固政策公告</h2>
+<h3>🔹 基本說明</h3>
+<ul>
+<li>本保固服務為 <strong>加購制 🛒</strong>，需在下單時或出貨前同時購買保固卡才生效。</li>
+<li>保固內容僅限於 <strong>維修或退換貨 🔧</strong>，一切以原商家／官方保固政策為準。</li>
+<li>保固服務不含人為損壞、外觀瑕疵或不可抗力因素（例：運輸損傷、自然災害）。</li>
+</ul>
+<h3>💳 保固卡種類與內容</h3>
+<ul>
+<li><strong>1️⃣ 入門保固卡</strong>：NT$199，適用商品售價 NT$1,000 以下，90 天保固</li>
+<li><strong>2️⃣ 基本保固卡</strong>：NT$599，適用商品售價 NT$5,000 以下，180 天保固</li>
+<li><strong>3️⃣ 進階保固卡</strong>：NT$1,999，適用商品售價 NT$20,000 以下，365 天保固</li>
+</ul>
+<h3>📬 申請流程</h3>
+<ol>
+<li>聯繫客服 → 提供訂單編號、保固卡憑證、問題描述與照片/影片</li>
+<li>客服審核 → 確認是否符合保固條件</li>
+<li>寄回檢測 → 檢測後依原商家／官方保固流程處理</li>
+<li>處理時效 → 約 7～21 個工作天（依原商家進度為準）</li>
+</ol>
+<h3>⚠️ 注意事項</h3>
+<ul>
+<li>保固卡需與原訂單綁定，不可轉讓或重複使用</li>
+<li>請妥善保存保固卡資訊，遺失恕不補發</li>
+<li>保固一律以原商家／官方保固規範為主，本店僅協助代辦流程</li>
+<li>加購保固卡時，建議與商品同單購買，避免遺漏</li>
+</ul>
+<a class="button glow" href="#">⇧ 回到主選單</a></section>
+<script>
+    const items = document.querySelectorAll('.fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    items.forEach(i => observer.observe(i));
+  </script>
+<script>
+  const itemsUp = document.querySelectorAll('.fade, .fade-up');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  itemsUp.forEach(i => observer.observe(i));
+</script>
+<script>
+document.addEventListener('click', function(e) {
+  const ripple = document.createElement('div');
+  ripple.className = 'ripple';
+  ripple.style.left = `${e.clientX}px`;
+  ripple.style.top = `${e.clientY}px`;
+  document.body.appendChild(ripple);
+  setTimeout(() => ripple.remove(), 600);
+});
+</script>
+<script>
+for (let i = 0; i < 30; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.left = Math.random() * 100 + 'vw';
+  p.style.animationDuration = (8 + Math.random() * 8) + 's';
+  p.style.opacity = Math.random() * 0.3 + 0.2;
+  document.body.appendChild(p);
+}
+</script>
+<section class="fade glass fade-in" id="contact" style="text-align:center;">
+<h2><span class="emoji">🌐</span> 追蹤我們｜維雷絲陸品行</h2>
+<h3><span class="emoji">🔗</span> 快速連結</h3>
+<ul style="list-style: none; padding: 0;">
+<li>💬 LINE：@630wabbi</li>
+<li>🎧 Discord：<a href="https://discord.gg/JjXF5v5CvD" target="_blank">點此加入</a></li>
+<li>📘 Facebook：<a href="https://www.facebook.com/profile.php?id=61579238407743" target="_blank">查看粉專</a></li>
+<li>📸 Instagram：<a href="https://www.instagram.com/vire.isi" target="_blank">@vire.isi</a></li>
+<li>🐦 Threads：<a href="https://www.threads.com/@vire.isi" target="_blank">@vire.isi</a></li>
+</ul>
+<a class="button glow" href="#">⇧ 回到主選單</a></section>
+<footer style="text-align:center; padding:2rem; font-size:0.9rem; color:#6b4e3d;">🔐 本網站已完成政府立案，合法商業登記｜統一編號：00412175</footer>
+</body>
+</html>
+<!-- 外部連結區塊 START -->
+<!-- 外部連結區塊 END -->
